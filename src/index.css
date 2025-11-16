@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-dark-bg text-text-primary font-body antialiased;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-hover {
+    @apply glass;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 217, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+  }
+  
+  .neon-blue-glow {
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5),
+                0 0 20px rgba(0, 217, 255, 0.3),
+                0 0 30px rgba(0, 217, 255, 0.2);
+  }
+  
+  .neon-green-glow {
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5),
+                0 0 20px rgba(57, 255, 20, 0.3),
+                0 0 30px rgba(57, 255, 20, 0.2);
+  }
+  
+  .neon-purple-glow {
+    box-shadow: 0 0 10px rgba(180, 41, 255, 0.5),
+                0 0 20px rgba(180, 41, 255, 0.3),
+                0 0 30px rgba(180, 41, 255, 0.2);
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00D9FF 0%, #39FF14 50%, #B429FF 100%);
+  }
+  
+  .gradient-border {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #00D9FF, #39FF14, #B429FF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00D9FF, #B429FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #39FF14, #00D9FF);
+}
+
