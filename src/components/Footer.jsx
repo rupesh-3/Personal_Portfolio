@@ -100,7 +100,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
           <p className="text-text-secondary text-sm mb-4 md:mb-0">
-            © 2025 S Rupesh. Built with passion for innovation.
+            © 2025 S Rupesh. Built with ❤️ & passion for innovation.
           </p>
           
           <motion.button

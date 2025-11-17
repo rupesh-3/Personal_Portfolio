@@ -2,11 +2,14 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, GraduationCap } from 'lucide-react'
 import { personalInfo, stats } from '../data/portfolioData'
+import { useTheme } from '../context/ThemeContext'
 import AnimatedCounter from './AnimatedCounter'
 
 const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { theme } = useTheme()
+  const textSecondaryClass = theme === 'dark' ? 'text-text-secondary' : 'text-text-secondary-light'
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,32 +59,32 @@ const About = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8"
             variants={itemVariants}
           >
-            <div className="glass rounded-xl p-6 text-center hover:border-neon-blue border border-transparent transition-all">
+            <div className="glass rounded-xl p-6 text-center hover:border-neon-blue border border-transparent transition-all min-h-[120px] flex flex-col justify-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                 <AnimatedCounter end={stats.cgpa} decimals={2} suffix="/10" />
               </div>
-              <div className="text-text-secondary">CGPA</div>
+              <div className={textSecondaryClass}>CGPA</div>
             </div>
 
-            <div className="glass rounded-xl p-6 text-center hover:border-neon-green border border-transparent transition-all">
+            <div className="glass rounded-xl p-6 text-center hover:border-neon-green border border-transparent transition-all min-h-[120px] flex flex-col justify-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                 <AnimatedCounter end={stats.publications} suffix="+" />
               </div>
-              <div className="text-text-secondary">IEEE Publications</div>
+              <div className={textSecondaryClass}>IEEE Publications</div>
             </div>
 
-            <div className="glass rounded-xl p-6 text-center hover:border-neon-purple border border-transparent transition-all">
+            <div className="glass rounded-xl p-6 text-center hover:border-neon-purple border border-transparent transition-all min-h-[120px] flex flex-col justify-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                 <AnimatedCounter end={stats.projects} suffix="+" />
               </div>
-              <div className="text-text-secondary">Major Projects</div>
+              <div className={textSecondaryClass}>Major Projects</div>
             </div>
 
-            <div className="glass rounded-xl p-6 text-center hover:border-neon-blue border border-transparent transition-all">
+            <div className="glass rounded-xl p-6 text-center hover:border-neon-blue border border-transparent transition-all min-h-[120px] flex flex-col justify-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                 <AnimatedCounter end={stats.internships} suffix="" />
               </div>
-              <div className="text-text-secondary">Internships</div>
+              <div className={textSecondaryClass}>Internships</div>
             </div>
           </motion.div>
 

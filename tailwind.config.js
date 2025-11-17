@@ -9,11 +9,18 @@ export default {
       colors: {
         'dark-bg': '#0A0E27',
         'dark-secondary': '#1A1F3A',
+        'light-bg': '#FFFFFF',
+        'light-secondary': '#F8FAFC',
+        'light-tertiary': '#E8F1F8',
         'neon-blue': '#00D9FF',
         'neon-green': '#39FF14',
         'neon-purple': '#B429FF',
+        'neon-yellow': '#FFD700',
         'text-primary': '#FFFFFF',
         'text-secondary': '#94A3B8',
+        'text-primary-light': '#1E293B',
+        'text-secondary-light': '#475569',
+        'text-tertiary-light': '#64748B',
       },
       fontFamily: {
         'heading': ['Inter', 'Poppins', 'sans-serif'],

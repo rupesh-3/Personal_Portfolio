@@ -3,8 +3,10 @@ import { motion } from 'framer-motion'
 import { Download, Mail, ArrowRight, Linkedin, Github } from 'lucide-react'
 import { personalInfo } from '../data/portfolioData'
 import TypingEffect from './TypingEffect'
+import { useTheme } from '../context/ThemeContext'
 
 const Hero = () => {
+  const { theme } = useTheme()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Hero = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-neon-blue/10 rounded-full blur-3xl"
+          className={`absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl ${theme === 'dark' ? 'bg-neon-blue/10' : 'bg-neon-blue/5'}`}
           animate={{
             x: mousePosition.x,
             y: mousePosition.y,
@@ -32,7 +34,7 @@ const Hero = () => {
           transition={{ duration: 20, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"
+          className={`absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-neon-purple/10' : 'bg-neon-purple/5'}`}
           animate={{
             x: -mousePosition.x * 0.5,
             y: -mousePosition.y * 0.5,
@@ -41,7 +43,7 @@ const Hero = () => {
           transition={{ duration: 25, repeat: Infinity }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl"
+          className={`absolute top-1/2 left-1/2 w-64 h-64 rounded-full blur-3xl ${theme === 'dark' ? 'bg-neon-green/10' : 'bg-neon-green/5'}`}
           animate={{
             x: mousePosition.x * 0.3,
             y: mousePosition.y * 0.3,

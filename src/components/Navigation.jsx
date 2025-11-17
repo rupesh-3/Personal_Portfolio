@@ -63,7 +63,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-text-primary"
+              className="text-text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -83,7 +83,7 @@ const Navigation = () => {
             exit={{ opacity: 0 }}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <div className="absolute inset-0 bg-dark-bg/95 backdrop-blur-lg" />
+            <div className="absolute inset-0 backdrop-blur-lg bg-dark-bg/95" />
             <motion.div
               className="absolute top-20 left-0 right-0 glass rounded-b-2xl p-6"
               initial={{ y: -50, opacity: 0 }}
