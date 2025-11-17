@@ -20,70 +20,114 @@ export const stats = {
   internships: 2
 };
 
+// Skill icon mapping - using Lucide React icon names
+export const skillIcons = {
+  // Embedded & IoT
+  "Arduino": "Cpu",
+  "Raspberry Pi": "Server",
+  "ESP32": "Radio",
+  "UART/SPI/I2C": "Network",
+  "V2I Communication": "Car",
+  "Sensor Integration": "Activity",
+  
+  // Programming
+  "Python": "Code",
+  "C": "FileCode",
+  "Embedded C": "Terminal",
+  "Java": "Coffee",
+  
+  // Data Analytics
+  "Power BI": "BarChart3",
+  "MS Excel": "Table",
+  "Pandas": "Database",
+  "Seaborn": "TrendingUp",
+  "Matplotlib": "LineChart",
+  
+  // AI/ML
+  "Generative AI": "Brain",
+  "Conversational AI": "MessageSquare",
+  "NLP": "Sparkles",
+  "Prompt Engineering": "Wand2",
+  
+  // Web Development
+  "HTML": "Globe",
+  "CSS": "Palette",
+  "Responsive Design": "Smartphone",
+  "Frontend Prototyping": "Zap",
+  
+  // Tools
+  "Figma": "PenTool",
+  "Git": "GitBranch",
+  "Jupyter Notebook": "BookOpen",
+  "Canva": "Image",
+  "Lovable": "Heart",
+  "Emergent": "Rocket"
+}
+
 export const skills = [
   {
     category: "Embedded & IoT",
     color: "neon-blue",
     items: [
-      { name: "Arduino", proficiency: 90 },
-      { name: "Raspberry Pi", proficiency: 85 },
-      { name: "ESP32", proficiency: 88 },
-      { name: "UART/SPI/I2C", proficiency: 80 },
-      { name: "V2I Communication", proficiency: 85 },
-      { name: "Sensor Integration", proficiency: 90 }
+      { name: "Arduino" },
+      { name: "Raspberry Pi" },
+      { name: "ESP32" },
+      { name: "UART/SPI/I2C" },
+      { name: "V2I Communication" },
+      { name: "Sensor Integration" }
     ]
   },
   {
     category: "Programming",
     color: "neon-green",
     items: [
-      { name: "Python", proficiency: 78 },
-      { name: "C", proficiency: 70 },
-      { name: "Embedded C", proficiency: 67 },
-      { name: "Java", proficiency: 75 }
+      { name: "Python" },
+      { name: "C" },
+      { name: "Embedded C" },
+      { name: "Java" }
     ]
   },
   {
     category: "Data Analytics",
     color: "neon-purple",
     items: [
-      { name: "Power BI", proficiency: 85 },
-      { name: "MS Excel", proficiency: 90 },
-      { name: "Pandas", proficiency: 88 },
-      { name: "Seaborn", proficiency: 85 },
-      { name: "Matplotlib", proficiency: 87 }
+      { name: "Power BI" },
+      { name: "MS Excel" },
+      { name: "Pandas" },
+      { name: "Seaborn" },
+      { name: "Matplotlib" }
     ]
   },
   {
     category: "AI/ML",
     color: "neon-green",
     items: [
-      { name: "Generative AI", proficiency: 88 },
-      { name: "Conversational AI", proficiency: 83 },
-      { name: "NLP", proficiency: 74 },
-      { name: "Prompt Engineering", proficiency: 88 }
+      { name: "Generative AI" },
+      { name: "Conversational AI" },
+      { name: "NLP" },
+      { name: "Prompt Engineering" }
     ]
   },
   {
     category: "Web Development",
     color: "neon-blue",
     items: [
-      { name: "HTML", proficiency: 79 },
-      { name: "CSS", proficiency: 75 },
-      { name: "Responsive Design", proficiency: 74 },
-      { name: "Frontend Prototyping", proficiency: 84 }
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "Responsive Design" },
+      { name: "Frontend Prototyping" }
     ]
   },
   {
     category: "Tools",
     color: "neon-purple",
     items: [
-      { name: "Figma", proficiency: 85 },
-      { name: "Git", proficiency: 88 },
-      { name: "Jupyter Notebook", proficiency: 70 },
-      { name: "Canva", proficiency: 90 },
-      { name: "Lovable", proficiency: 89 },
-      { name: "Emergent", proficiency: 84 }
+      { name: "Figma" },
+      { name: "Git" },
+      { name: "Jupyter Notebook" },
+      { name: "Canva" },
+      { name: "Lovable" },
+      { name: "Emergent" }
     ]
   }
 ];
@@ -97,33 +141,32 @@ export const projects = {
       description: "Real-time IoT framework using ESP32 for vehicle-to-infrastructure communications. Features embedded C programming, wireless protocols, and low-latency networking for intelligent traffic management.",
       techStack: ["ESP32", "Embedded C", "V2I Communication", "IoT", "Wireless Protocols"],
       results: "Published in IEEE ICSCSA 2025",
-      github: "https://github.com/rupesh-3",
+      github: "https://github.com/rupesh-3/route-ahead-navigator",
       demo: null,
-      image: "/api/placeholder/600/400",
+      image: "/images/projects/project.png",
       metrics: "Real-time monitoring with <100ms latency"
     },
     {
       id: 2,
-      title: "AskAIMee – AI Chatbot",
+      title: "AskAIMee – AI Powered Knowledge Assistant",
       category: "AI/ML",
       description: "Conversational AI chatbot built with Lovable UI and Lyzr backend. Features NLP capabilities, advanced prompt engineering, and API integration for contextual, human-like dialogue.",
       techStack: ["Lovable", "Lyzr", "NLP", "Prompt Engineering", "API Integration"],
       results: "Contextual dialogue with 95% accuracy",
-      github: "https://github.com/rupesh-3",
+      github: "https://github.com/rupesh-3/AskAIMee",
       demo: null,
-      image: "/api/placeholder/600/400",
+      image: "/images/projects/ask-ai-mee.png",
       metrics: "95% contextual accuracy"
     },
     {
       id: 3,
-      title: "Smart Walking Stick",
+      title: "Smart Walking Stick for Disabled People",
       category: "IoT & Embedded",
       description: "Raspberry Pi-based assistive device with ultrasonic sensors for obstacle detection. Designed to improve mobility and safety for visually impaired users.",
       techStack: ["Raspberry Pi", "Ultrasonic Sensors", "Python", "IoT"],
       results: "80% improvement in detection accuracy",
-      github: "https://github.com/rupesh-3",
       demo: null,
-      image: "/api/placeholder/600/400",
+      image: "/images/projects/smart-walking-stick.jpg",
       metrics: "80% accuracy improvement"
     }
   ],
@@ -135,45 +178,47 @@ export const projects = {
       description: "V2I communication system for intelligent traffic management.",
       techStack: ["ESP32", "Embedded C", "V2I"],
       results: "IEEE Publication",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/project.png",
+      github: "https://github.com/rupesh-3/route-ahead-navigator"
     },
     {
       id: 3,
-      title: "Smart Walking Stick",
+      title: "Smart Walking Stick for Disabled People",
       category: "IoT & Embedded",
       description: "Assistive device with 80% improved detection accuracy.",
       techStack: ["Raspberry Pi", "Ultrasonic Sensors"],
       results: "80% accuracy improvement",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/smart-walking-stick.jpg"
     },
     {
       id: 5,
       title: "Temperature Monitoring System",
       category: "IoT & Embedded",
-      description: "DHT11 sensor-based monitoring with Raspberry Pi achieving 95% accuracy.",
+      description: "DHT11 sensor-based monitoring with Arduino achieving 95% accuracy.",
       techStack: ["Raspberry Pi", "DHT11", "Python"],
       results: "95% accuracy over manual methods",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/tempsystem.jpg"
     },
     {
       id: 6,
-      title: "Smart Bin & Water Monitoring",
+      title: "Water Monitoring System",
       category: "IoT & Embedded",
-      description: "Sensor-enabled waste management and real-time water level tracking.",
-      techStack: ["IoT Sensors", "Python", "Raspberry Pi"],
+      description: "Sensor-Integrated Real-Time Intelligent Water Level Monitoring for Smart Infrastructure.",
+      techStack: ["IoT Sensors", "Python", "Esp32"],
       results: "Real-time monitoring",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/watermonitor.jpg",
     }
   ],
   aiMl: [
     {
       id: 2,
-      title: "AskAIMee Chatbot",
+      title: "AskAIMee – AI Powered Knowledge Assistant",
       category: "AI/ML",
       description: "Conversational AI with NLP and prompt engineering.",
       techStack: ["Lovable", "Lyzr", "NLP"],
       results: "95% contextual accuracy",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/ask-ai-mee.png",
+      github: "https://github.com/rupesh-3/AskAIMee"
     },
     {
       id: 7,
@@ -182,7 +227,7 @@ export const projects = {
       description: "AI-powered autism detection with blockchain security.",
       techStack: ["InceptionV3", "Blockchain", "Python"],
       results: "IEEE Publication",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/autism.png"
     }
   ],
   dataAnalytics: [
@@ -193,16 +238,17 @@ export const projects = {
       description: "EDA and sentiment analysis using Python, Pandas, and visualization libraries.",
       techStack: ["Python", "Pandas", "Matplotlib", "Seaborn"],
       results: "Comprehensive insights",
-      github: "https://github.com/rupesh-3"
+      github: "https://github.com/rupesh-3/College_Event_Engagement_Analysis/tree/main",
+      image: "/images/projects/data.jpg"
     },
     {
       id: 9,
-      title: "Solar Home Monitoring",
+      title: "Solar-Powered Home Monitoring System",
       category: "Data Analytics",
       description: "Data analysis for solar energy-based smart home monitoring.",
       techStack: ["Python", "Data Analysis", "IoT"],
       results: "IEEE Publication",
-      github: "https://github.com/rupesh-3"
+      image: "/images/projects/solarsmart.jpg"
     }
   ]
 };
@@ -224,7 +270,7 @@ export const publications = [
   },
   {
     id: 2,
-    title: "Solar Energy based Smart Home Monitoring",
+    title: "Solar Energy based Smart Home Monitoring and Automation using IOT",
     venue: "IEEE ICPECTS",
     date: "October 2024",
     doi: "10.1109/ICPECTS62210.2024.10780112",
@@ -238,7 +284,7 @@ export const publications = [
   },
   {
     id: 3,
-    title: "IoT-Enabled Intelligent Traffic Signals",
+    title: "IoT-Enabled Intelligent Traffic Signals for Optimizing Smart Cities using V2I Communications",
     venue: "IEEE ICSCSA",
     date: "August 2025",
     doi: "10.1109/ICSCSA66339.2025.11171093",
@@ -269,7 +315,7 @@ export const experiences = [
   {
     id: 2,
     company: "SortyX Ventures Pvt. Ltd.",
-    role: "Intern",
+    role: "IoT Intern",
     period: "May 2025 - June 2025",
     location: "India",
     description: "Worked on smart automation projects for waste and water management systems.",
@@ -291,7 +337,7 @@ export const achievements = [
   },
   {
     id: 2,
-    title: "ByteSafe: Cybersecurity Workshop Conductor",
+    title: "ByteSafe: Cybersecurity Workshop",
     organization: "CCE Association",
     date: "2024",
     description: "Organized and conducted cybersecurity workshop"
@@ -306,7 +352,7 @@ export const achievements = [
   {
     id: 4,
     title: "Apple Centre of Excellence Recognition",
-    organization: "Apple",
+    organization: "Rajalakshmi Institute of Technology",
     date: "2024",
     description: "Recognized for excellence in technology and innovation"
   },
@@ -328,6 +374,7 @@ export const certifications = [
   { name: "UI/UX Intermediate", platform: "Great Learning", category: "Web Development" },
   { name: "IBM Essentials in Cloud ", platform: "Cognitive Class", category: "Cloud Computing" },
   { name: "Become a MAANG Engineer", platform: "Scaler Academy", category: "General" },
-  { name: "The AI Revolution", platform: "Skillo", category: "AI/ML" }
+  { name: "The AI Revolution", platform: "Skillo", category: "AI/ML" },
+  { name: "Business Analytics", platform: "HCL Guvi", category: "Analysis & Management" }
 ];
 

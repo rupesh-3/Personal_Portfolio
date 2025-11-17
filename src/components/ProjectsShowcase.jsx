@@ -2,16 +2,20 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ChevronLeft, ChevronRight, ExternalLink, Github, ArrowRight } from 'lucide-react'
 import { projects } from '../data/portfolioData'
+import { useTheme } from '../context/ThemeContext'
 
 const ProjectCard = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false)
   const cardRef = useRef(null)
   const isInView = useInView(cardRef, { once: true, margin: '-50px' })
+  const { theme } = useTheme()
+  const textSecondaryClass = theme === 'dark' ? 'text-text-secondary' : 'text-text-secondary-light'
+  const overlayGradient = theme === 'dark' ? 'from-dark-bg/80' : 'from-light-bg/80'
 
   return (
     <motion.div
       ref={cardRef}
-      className="glass rounded-xl overflow-hidden group cursor-pointer flex-shrink-0 w-80 md:w-96"
+      className="glass rounded-xl overflow-hidden group cursor-pointer flex-shrink-0 w-80 md:w-96 flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       initial={{ opacity: 0, scale: 0.9 }}
@@ -20,15 +24,26 @@ const ProjectCard = ({ project, index }) => {
       whileHover={{ scale: 1.05, z: 50 }}
     >
       {/* Project Image/Placeholder */}
-      <div className="relative h-48 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-6xl font-bold gradient-text opacity-30">
-            {project.title.charAt(0)}
-          </span>
-        </div>
+      <div className={`relative h-48 bg-gradient-to-br ${theme === 'dark' ? 'from-neon-blue/20 to-neon-purple/20' : 'from-neon-blue/10 to-neon-purple/10'} overflow-hidden`}>
+        {project.image && project.image !== "/api/placeholder/600/400" ? (
+          <>
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+            <div className={`absolute inset-0 bg-gradient-to-t ${overlayGradient} via-transparent to-transparent`}></div>
+          </>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-6xl font-bold gradient-text opacity-30">
+              {project.title.charAt(0)}
+            </span>
+          </div>
+        )}
         {isHovered && (
           <motion.div
-            className="absolute inset-0 bg-dark-bg/90 flex items-center justify-center gap-4"
+            className={`absolute inset-0 flex items-center justify-center gap-4 z-10 ${theme === 'dark' ? 'bg-dark-bg/90' : 'bg-light-bg/95'}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -61,15 +76,15 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-semibold gradient-text">{project.title}</h3>
-          <span className="text-xs glass px-2 py-1 rounded-full text-text-secondary">
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex items-start justify-between mb-3 gap-2">
+          <h3 className="text-xl font-semibold gradient-text flex-1">{project.title}</h3>
+          <span className={`text-xs glass px-2 py-1 rounded-full ${textSecondaryClass} flex-shrink-0`}>
             {project.category}
           </span>
         </div>
 
-        <p className="text-text-secondary text-sm mb-4 line-clamp-2">
+        <p className={`${textSecondaryClass} text-sm mb-4 line-clamp-3 flex-1`}>
           {project.description}
         </p>
 

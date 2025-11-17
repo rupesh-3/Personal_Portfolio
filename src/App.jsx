@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-dark-bg grid-pattern">
+    <div className="min-h-screen dark:bg-dark-bg bg-light-bg grid-pattern transition-colors duration-300">
       <Navigation />
       <Hero />
       <About />

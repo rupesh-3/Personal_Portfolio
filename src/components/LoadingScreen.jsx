@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext'
 
 const LoadingScreen = () => {
+  const { theme } = useTheme()
   return (
-    <div className="fixed inset-0 bg-dark-bg flex items-center justify-center z-50">
+    <div className={`fixed inset-0 flex items-center justify-center z-50 ${theme === 'dark' ? 'bg-dark-bg' : 'bg-light-bg'}`}>
       <div className="text-center">
         <motion.div
           className="mb-8"
