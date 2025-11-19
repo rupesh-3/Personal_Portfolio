@@ -29,32 +29,32 @@ export const skillIcons = {
   "UART/SPI/I2C": "Network",
   "V2I Communication": "Car",
   "Sensor Integration": "Activity",
-  
+
   // Programming
   "Python": "Code",
   "C": "FileCode",
   "Embedded C": "Terminal",
   "Java": "Coffee",
-  
+
   // Data Analytics
   "Power BI": "BarChart3",
   "MS Excel": "Table",
   "Pandas": "Database",
   "Seaborn": "TrendingUp",
   "Matplotlib": "LineChart",
-  
+
   // AI/ML
   "Generative AI": "Brain",
   "Conversational AI": "MessageSquare",
   "NLP": "Sparkles",
   "Prompt Engineering": "Wand2",
-  
+
   // Web Development
   "HTML": "Globe",
   "CSS": "Palette",
   "Responsive Design": "Smartphone",
   "Frontend Prototyping": "Zap",
-  
+
   // Tools
   "Figma": "PenTool",
   "Git": "GitBranch",
@@ -136,6 +136,18 @@ export const projects = {
   featured: [
     {
       id: 1,
+      title: "Threadly - AI-Powered Conversation Strategist",
+      category: "AI/ML",
+      description: "Threadly is an intelligent communication assistant that analyzes conversation contexts and generates strategic response options with predicted outcomes. Get AI-driven coaching on how to communicate effectively in any scenario.",
+      techStack: ["React", "Node.js", "NLP", "Prompt Engineering", "API Integration"],
+      results: "Fully functional AI chat experience",
+      github: "https://github.com/rupesh-3/Threadly",
+      demo: null,
+      image: "/images/projects/threadly.png",
+      metrics: "Offers 95% accurate replies with 88% risk-impact scoring."
+    },
+    {
+      id: 2,
       title: "Smart Traffic Monitoring System (V2I)",
       category: "IoT",
       description: "Real-time IoT framework using ESP32 for vehicle-to-infrastructure communications. Features embedded C programming, wireless protocols, and low-latency networking for intelligent traffic management.",
@@ -147,7 +159,7 @@ export const projects = {
       metrics: "Real-time monitoring with <100ms latency"
     },
     {
-      id: 2,
+      id: 3,
       title: "AskAIMee – AI Powered Knowledge Assistant",
       category: "AI/ML",
       description: "Conversational AI chatbot built with Lovable UI and Lyzr backend. Features NLP capabilities, advanced prompt engineering, and API integration for contextual, human-like dialogue.",
@@ -157,17 +169,6 @@ export const projects = {
       demo: null,
       image: "/images/projects/ask-ai-mee.png",
       metrics: "95% contextual accuracy"
-    },
-    {
-      id: 3,
-      title: "Smart Walking Stick for Disabled People",
-      category: "IoT & Embedded",
-      description: "Raspberry Pi-based assistive device with ultrasonic sensors for obstacle detection. Designed to improve mobility and safety for visually impaired users.",
-      techStack: ["Raspberry Pi", "Ultrasonic Sensors", "Python", "IoT"],
-      results: "80% improvement in detection accuracy",
-      demo: null,
-      image: "/images/projects/smart-walking-stick.jpg",
-      metrics: "80% accuracy improvement"
     }
   ],
   iot: [
@@ -228,11 +229,21 @@ export const projects = {
       techStack: ["InceptionV3", "Blockchain", "Python"],
       results: "IEEE Publication",
       image: "/images/projects/autism.png"
+    },
+    {
+      id: 8,
+      title: "Threadly - AI-Powered Conversation Strategist",
+      category: "AI/ML",
+      description: "Threadly analyzes conversations and delivers strategic replies with predicted outcomes.",
+      techStack: ["React", "Node.js", "NLP", "Prompt Engineering", "API Integration"],
+      results: "Fully functional AI chat experience",
+      github: "https://github.com/rupesh-3/Threadly",
+      image: "/images/projects/threadly.png"
     }
   ],
   dataAnalytics: [
     {
-      id: 8,
+      id: 9,
       title: "College Event Engagement Analysis",
       category: "Data Analytics",
       description: "EDA and sentiment analysis using Python, Pandas, and visualization libraries.",
@@ -242,7 +253,7 @@ export const projects = {
       image: "/images/projects/data.jpg"
     },
     {
-      id: 9,
+      id: 10,
       title: "Solar-Powered Home Monitoring System",
       category: "Data Analytics",
       description: "Data analysis for solar energy-based smart home monitoring.",

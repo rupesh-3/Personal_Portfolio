@@ -27,9 +27,8 @@ const Navigation = () => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? 'glass py-3' : 'py-6'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'py-6'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -115,4 +114,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
