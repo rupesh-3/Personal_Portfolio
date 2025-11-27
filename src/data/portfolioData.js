@@ -142,7 +142,7 @@ export const projects = {
       techStack: ["React", "Node.js", "NLP", "Prompt Engineering", "API Integration"],
       results: "Fully functional AI chat experience",
       github: "https://github.com/rupesh-3/Threadly",
-      demo: null,
+      demo: "/images/Threadly Demo.mp4",
       image: "/images/projects/threadly.png",
       metrics: "Offers 95% accurate replies with 88% risk-impact scoring."
     },
