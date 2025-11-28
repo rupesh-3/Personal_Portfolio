@@ -30,6 +30,8 @@ const ProjectCard = ({ project, index }) => {
             <img 
               src={project.image} 
               alt={project.title}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
             <div className={`absolute inset-0 bg-gradient-to-t ${overlayGradient} via-transparent to-transparent`}></div>

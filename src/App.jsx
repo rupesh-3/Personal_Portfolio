@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import TechStack from './components/TechStack'
 import ProjectsShowcase from './components/ProjectsShowcase'
-import ActivityDashboard from './components/ActivityDashboard'
+const ActivityDashboard = lazy(() => import('./components/ActivityDashboard'))
 import Publications from './components/Publications'
 import Timeline from './components/Timeline'
 import Certifications from './components/Certifications'
@@ -35,7 +35,9 @@ function App() {
       <About />
       <TechStack />
       <ProjectsShowcase />
-      <ActivityDashboard />
+      <Suspense fallback={<div className="text-center py-12" role="status" aria-live="polite">Loading activity…</div>}>
+        <ActivityDashboard />
+      </Suspense>
       <Publications />
       <Timeline />
       <Certifications />
