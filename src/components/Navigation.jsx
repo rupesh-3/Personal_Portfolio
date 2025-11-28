@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Code, Briefcase, FileText, Award, Mail } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Home, User, Code, Briefcase, FileText, Award, Mail } from 'lucide-react'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  // Mobile nav is now inline; no hamburger menu state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,56 +59,35 @@ const Navigation = () => {
                 </motion.a>
               ))}
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="text-text-primary"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* No hamburger button; mobile nav shown below */}
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="fixed inset-0 z-30 md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <div className="absolute inset-0 backdrop-blur-lg bg-dark-bg/95" />
-            <motion.div
-              className="absolute top-20 left-0 right-0 glass rounded-b-2xl p-6"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
-            >
-              <div className="flex flex-col space-y-4">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    className="text-text-primary hover:text-neon-blue transition-colors flex items-center gap-3 py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <item.icon size={20} />
-                    <span className="text-lg">{item.name}</span>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Spacer to offset inline mobile nav height */}
+      <div className="md:hidden h-16" aria-hidden="true" />
+
+      {/* Mobile Navigation (inline) */}
+      <nav className="md:hidden fixed top-16 left-0 right-0 z-30">
+        <div className="px-4">
+          <div className="glass rounded-xl p-3 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-4">
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="shrink-0 text-text-secondary hover:text-neon-blue transition-colors flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <item.icon size={18} />
+                  <span className="text-sm">{item.name}</span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
     </>
   )
 }

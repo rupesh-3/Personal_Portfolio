@@ -147,6 +147,7 @@ const Hero = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="w-12 h-12 glass rounded-full flex items-center justify-center hover:border-neon-blue transition-all"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -158,6 +159,7 @@ const Hero = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="w-12 h-12 glass rounded-full flex items-center justify-center hover:border-neon-green transition-all"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
